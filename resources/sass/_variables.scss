@@ -6,6 +6,7 @@ $duration: 0.3s;
 $black: #070707;
 $light-grey: #CECECE;
 $card-bg: #131315;
+$border-color: #4C4C56;
 
 $rose: #FF1083;
 $blue: #20B9FF;
@@ -26,6 +27,6 @@ $container-max-width: calc(#{$container-inner-width} + 2*#{$container-padding-x}
 $tablet-max-width: 1023px;
 $mobile-max-width: 767px;
 
-$section-padding-y-desktop: 116px;
-$section-padding-y-tablet: 80px;
+$section-padding-y-desktop: 180px;
+$section-padding-y-tablet: 120px;
 $section-padding-y-mobile: 64px;
