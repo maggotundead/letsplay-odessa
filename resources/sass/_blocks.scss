@@ -171,9 +171,29 @@
             }
             @media (hover: hover) {
                 &:hover {
+                    span {
+                        &::before {
+                            transform: scaleX(1);
+                        }
+                    }
                     &::after {
                         transform: translateX(12px);
                     }
+                }
+            }
+
+            span {
+                position: relative;
+                &::before {
+                    content: '';
+                    transform: scaleX(0);
+                    position: absolute;
+                    bottom: 0;
+                    left: 0;
+                    width: 100%;
+                    border-bottom: 1px solid $rose;
+                    transition: $duration;
+                    transform-origin: left center;
                 }
             }
         }
@@ -529,6 +549,7 @@
         line-height: 1.5;
         cursor: pointer;
         break-inside: avoid;
+        transition: $duration;
         @include tablet {
             padding: 32px 24px;
         }
@@ -536,6 +557,12 @@
             margin-bottom: 0;
             padding: 24px;
         }
+        @media (hover: hover) {
+            &:hover {
+                background-color: $card-bg-hover;
+            }
+        }
+
         &.active {
             .faq-item-head {
                 &::after {
@@ -710,6 +737,7 @@
         font-size: 20px;
         line-height: 1.5;
         font-weight: 400;
+        transition: $duration;
         @include responsive {
             font-size: 18px;
         }
@@ -728,5 +756,13 @@
 
     .address {
         font-style: normal;
+    }
+
+    .phone {
+        @media (hover: hover) {
+            &:hover {
+                color: $rose;
+            }
+        }
     }
 }

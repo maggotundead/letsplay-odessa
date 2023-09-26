@@ -118,6 +118,17 @@
         padding-bottom: 18px;
         border-bottom: 1px solid $border-color;
         padding-right: 20px;
+        cursor: pointer;
+        @media (hover: hover) {
+            &:hover {
+                &::after {
+                    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 20 21' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M6.25 18L13.75 10.5L6.25 3' stroke='url(%23paint0_linear_138_220)' stroke-width='2' stroke-linecap='square'/%3E%3Cdefs%3E%3ClinearGradient id='paint0_linear_138_220' x1='6.25' y1='7.58334' x2='16.1255' y2='7.57109' gradientUnits='userSpaceOnUse'%3E%3Cstop stop-color='%2337B0F4'/%3E%3Cstop offset='1' stop-color='%237DFB30'/%3E%3C/linearGradient%3E%3C/defs%3E%3C/svg%3E");
+                }
+                .room-item-title {
+                    color: $rose;
+                }
+            }
+        }
 
         &::after {
             content: '';
@@ -132,6 +143,7 @@
         &-title {
             font-size: 22px;
             line-height: 1.27273;
+            transition: $duration;
             @include mobile {
                 font-size: 20px;
             }
@@ -193,6 +205,13 @@
         &-item {
             padding-bottom: 100%;
             position: relative;
+            @media (hover: hover) {
+                &:hover {
+                    .widget-item-overlay {
+                        opacity: 1;
+                    }
+                }
+            }
             &::after {
                 content: '';
                 position: absolute;
@@ -201,6 +220,32 @@
                 right: 0;
                 bottom: 0;
                 background: linear-gradient(180deg, rgba(7, 7, 7, 0.00) 50.52%, #070707 95.93%);
+                z-index: 2;
+            }
+            &-overlay {
+                opacity: 0;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-content: center;
+                transition: $duration;
+                position: absolute;
+                z-index: 3;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                span {
+                    margin-top: 12px;
+                    font-size: 12px;
+                    line-height: normal;
+                    letter-spacing: 0.72px;
+                    text-transform: uppercase;
+                    background: $blue-green-text-gradient;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
             }
             img {
                 position: absolute;

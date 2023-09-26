@@ -110,6 +110,9 @@
         align-items: center;
         padding: 0 24px;
         height: 52px;
+        position: relative;
+        overflow: hidden;
+
         @include tablet {
             font-size: 12px;
             padding: 0 16px;
@@ -121,6 +124,36 @@
             font-size: 12px;
             letter-spacing: 0;
             padding: 0 12px;
+        }
+        @media (hover: hover) {
+            &:hover {
+                &::before {
+                    left: 0;
+                }
+                span {
+                    background: #fff;
+                    background-clip: text;
+                    -webkit-background-clip: text;
+                    -webkit-text-fill-color: transparent;
+                }
+            }
+        }
+        &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            background: $rose-violet-btn-gradient;
+            width: 100%;
+            transition: left $duration;
+            left: -100%;
+        }
+        span {
+            background: $rose-violet-btn-gradient;
+            background-clip: text;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            position: relative;
         }
     }
 }

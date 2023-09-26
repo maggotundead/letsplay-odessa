@@ -41,54 +41,31 @@ if (blockFaq) {
     })
 }
 
+const orderModal = document.getElementById('order-modal');
+const thanksModal = document.getElementById('thanks-modal');
 
-// const fixedBtn = document.querySelector('.fixed-btn');
-// const subscribeBlock = document.getElementById('subscribe');
+const modalRoomSelector = orderModal.querySelector('#room-select');
+
+document.querySelectorAll('.js-order-modal-btn').forEach(btn => btn.addEventListener('click', () => {
+    orderModal.classList.add('active');
+    if (btn.getAttribute('data-room-index') !== null) {
+        modalRoomSelector.value = btn.getAttribute('data-room-index');
+    }
+}));
+
+document.querySelectorAll('.js-modal-close-btn').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.classList.remove('active');
+        });
+    });
+});
 
 
-// function updateFixedBtnPosition () {
-//     const fixedBtnBottomOffset = 32;
-//     const subscribeBlockPosition = subscribeBlock.offsetTop;
-//     const subscribeBlockPaddingTop = parseInt(window.getComputedStyle(subscribeBlock, null).getPropertyValue('padding-top'));
-
-//     const scrollPosition = window.pageYOffset || document.documentElement.scrollTop || document.body.scrollTop || 0;
-
-//     const windowHeight = window.innerHeight;
-
-//     // console.log('scroll position ' + scrollPosition);
-//     // console.log('distance to subscribe ' + subscribeBlockPosition);
-//     // console.log('subscribe padding top ' + subscribeBlockPaddingTop);
-
-//     // if ( scrollPosition < subscribeBlockPosition - windowHeight + subscribeBlockPaddingTop )
-//     //     fixedBtn.style.bottom = `${ fixedBtnBottomOffset }px`;
-//     // else
-//     //     fixedBtn.style.bottom = `${ scrollPosition + window.innerHeight - subscribeBlockPosition - subscribeBlockPaddingTop + fixedBtnBottomOffset }px`;
-//     if ( scrollPosition < subscribeBlockPosition - windowHeight + subscribeBlockPaddingTop )
-//         fixedBtn.classList.add('visible');
-//     else
-//         fixedBtn.classList.remove('visible');
-// }
-// updateFixedBtnPosition();
-// window.onscroll = updateFixedBtnPosition;
-
-// function fnBrowserDetect() {
-//     let userAgent = navigator.userAgent;
-//     let browserName;
-
-//     if( userAgent.match(/chrome|chromium|crios/i) ) {
-//         browserName = "chrome";
-//     } else if ( userAgent.match(/firefox|fxios/i) ) {
-//         browserName = "firefox";
-//     } else if ( userAgent.match(/safari/i) ) {
-//         browserName = "safari";
-//     } else if ( userAgent.match(/opr\//i) ) {
-//         browserName = "opera";
-//     } else if ( userAgent.match(/edg/i) ) {
-//         browserName = "edge";
-//     } else {
-//         browserName = "No browser detection";
-//     }
-//     document.body.classList.add(browserName);
-// }
-// fnBrowserDetect();
-
+document.querySelectorAll('.js-submit-close').forEach(btn => {
+    btn.addEventListener('click', () => {
+        document.querySelectorAll('.modal').forEach(modal => {
+            modal.classList.remove('active');
+        });
+    });
+});
