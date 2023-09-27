@@ -642,6 +642,12 @@
                 padding-right: 0;
                 font-size: 16px;
             }
+
+            a {
+                color: $rose;
+                text-decoration: underline;
+                display: inline-block;
+            }
         }
         .body-outer {
             min-height: 0;

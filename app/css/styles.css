@@ -978,6 +978,10 @@ main {
         .block-faq .faq-item-body {
           padding-right: 0;
           font-size: 16px; } }
+      .block-faq .faq-item-body a {
+        color: #FF1083;
+        text-decoration: underline;
+        display: inline-block; }
     .block-faq .faq-item .body-outer {
       min-height: 0; }
     .block-faq .faq-item .body-inner {
