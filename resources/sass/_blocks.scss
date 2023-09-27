@@ -1,5 +1,6 @@
 .block-welcome {
-    padding-top: 228px;
+    // padding-top: 228px;
+    padding-top: 168px;
     padding-bottom: 112px;
     position: relative;
     @include mobile {
@@ -151,13 +152,13 @@
             margin-top: 24px;
             display: flex;
             align-items: center;
-            font-size: 18px;
-            letter-spacing: 1.08px;
-            text-transform: uppercase;
-            background: $rose-violet-btn-gradient;
-            background-clip: text;
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            // font-size: 18px;
+            // letter-spacing: 1.08px;
+            // text-transform: uppercase;
+            // background: $rose-violet-btn-gradient;
+            // background-clip: text;
+            // -webkit-background-clip: text;
+            // -webkit-text-fill-color: transparent;
             cursor: pointer;
             &::after {
                 content: '';
@@ -184,6 +185,13 @@
 
             span {
                 position: relative;
+                font-size: 18px;
+                letter-spacing: 1.08px;
+                text-transform: uppercase;
+                background: $rose-violet-btn-gradient;
+                background-clip: text;
+                -webkit-background-clip: text;
+                -webkit-text-fill-color: transparent;
                 &::before {
                     content: '';
                     transform: scaleX(0);
@@ -288,6 +296,7 @@
 }
 
 .block-about {
+    padding-top: $section-padding-y-desktop;
     @include tablet {
         padding-top: $section-padding-y-tablet;
     }
@@ -376,6 +385,12 @@
             @include mobile {
                 width: 100%;
                 max-width: 100%;
+            }
+        }
+
+        &:nth-child(3) {
+            @include mobile {
+                display: none;
             }
         }
 
@@ -488,8 +503,9 @@
             grid-column-start: 5;
             grid-column-end: span 6;
             @include mobile {
-                grid-column: 1;
-                grid-row: initial;
+                // grid-column: 1;
+                // grid-row: initial;
+                display: none;
             }
         }
         &:nth-child(5) {
@@ -497,8 +513,9 @@
             grid-column-start: 1;
             grid-column-end: span 4;
             @include mobile {
-                grid-column: 1;
-                grid-row: initial;
+                // grid-column: 1;
+                // grid-row: initial;
+                display: none;
             }
         }
 
@@ -664,7 +681,8 @@
             background: linear-gradient(0deg, rgba(7, 7, 7, 0.00) 8.28%, rgba(7, 7, 7, 0.97) 53.43%, #070707 87.91%);
         }
         &::after {
-            bottom: 0;
+            // bottom: 0;
+            bottom: -1px;
             background: linear-gradient(180deg, rgba(7, 7, 7, 0.00) 8.28%, rgba(7, 7, 7, 0.97) 53.43%, #070707 87.91%);
             @include mobile {
                 bottom: 100px;

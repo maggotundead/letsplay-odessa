@@ -22,12 +22,12 @@
             font-size: 64px;
         }
         @include tablet {
-            // font-size: 56px;
-            font-size: 48px;
+            font-size: 56px;
+            // font-size: 48px;
         }
         @include mobile {
-            // font-size: 48px;
-            font-size: 40px;
+            font-size: 48px;
+            // font-size: 40px;
         }
     }
     &.section-title {
@@ -46,10 +46,12 @@
             font-size: 36px;
         }
     }
-    span {
-        color: transparent;
-        -webkit-text-stroke: 1px #fff;
-    }
+    // span {
+    //     // color: transparent;
+    //     color: $blue;
+    //     // font-weight: 400;
+    //     // -webkit-text-stroke: 1px #fff;
+    // }
 
     br {
         @include mobile {
@@ -193,17 +195,17 @@
         // width: 110px;
         width: auto;
     }
-    &-figure {
-        // margin-right: 12px;
-        // @include mobile {
-        //     // margin-right: 8px;
-        //     margin-right: 4px;
-        // }
-        svg {
-            width: 58px;
-            height: 39px;
-        }
-    }
+    // &-figure {
+    //     // margin-right: 12px;
+    //     // @include mobile {
+    //     //     // margin-right: 8px;
+    //     //     margin-right: 4px;
+    //     // }
+    //     svg {
+    //         width: 58px;
+    //         height: 39px;
+    //     }
+    // }
     &-text {
         font-size: 18px;
         font-weight: 600;
@@ -257,5 +259,12 @@
                 color: $rose;
             }
         }
+    }
+}
+
+.mobile-only {
+    display: none;
+    @include mobile {
+        display: initial;
     }
 }

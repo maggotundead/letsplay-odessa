@@ -1,10 +1,11 @@
 .footer {
     margin-top: $section-padding-y-desktop;
-    padding-bottom: 144px;
+    // padding-bottom: 144px;
+    padding-bottom: 72px;
     border-top: 1px solid $border-color;
     @include tablet {
         margin-top: $section-padding-y-tablet;
-        padding-bottom: $section-padding-y-tablet;
+        // padding-bottom: $section-padding-y-tablet;
     }
     @include mobile {
         margin-top: $section-padding-y-mobile;

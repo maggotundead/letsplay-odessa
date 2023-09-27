@@ -48,8 +48,8 @@ const modalRoomSelector = orderModal.querySelector('#room-select');
 
 document.querySelectorAll('.js-order-modal-btn').forEach(btn => btn.addEventListener('click', () => {
     orderModal.classList.add('active');
-    if (btn.getAttribute('data-room-index') !== null) {
-        modalRoomSelector.value = btn.getAttribute('data-room-index');
+    if (btn.getAttribute('data-room-name') !== null) {
+        modalRoomSelector.value = btn.getAttribute('data-room-name');
     }
 }));
 
@@ -61,7 +61,6 @@ document.querySelectorAll('.js-modal-close-btn').forEach(btn => {
     });
 });
 
-
 document.querySelectorAll('.js-submit-close').forEach(btn => {
     btn.addEventListener('click', () => {
         document.querySelectorAll('.modal').forEach(modal => {
@@ -69,3 +68,39 @@ document.querySelectorAll('.js-submit-close').forEach(btn => {
         });
     });
 });
+
+//ORDER FORM
+const orderForm = document.querySelector('#order-form');
+
+orderForm.onsubmit = async (e) => {
+    e.preventDefault();
+
+    // let selectedRoom = orderForm.querySelector('#room-select');
+    // let clientsAmoumt = orderForm.querySelector('#crowd-select');
+    // let clientPhone = orderForm.querySelector('input[name="user_phone"]');
+    // let message = orderForm.querySelector('input[name="user_comment"]');
+
+    let required = true;
+
+    if (required) {
+        let response = await fetch('/contact-form.php', {
+            method: 'POST',
+            body: new FormData(orderForm)
+        });
+        if (response.ok) {
+            resetForm(orderForm);
+            console.log('contact form send ok');
+            orderModal.classList.remove('active');
+            setTimeout(() => {
+                thanksModal.classList.add('active');
+                console.log('contact form reset');
+            }, 500);
+        } else {
+            alert("Error, please try again")
+        }
+    }
+};
+
+function resetForm(form) {
+    form.reset();
+}
